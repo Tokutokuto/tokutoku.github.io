@@ -1,0 +1,386 @@
+<!doctype html>
+<!--
+ 제작자 : 묘연 (https://sweet-myo.tistory.com)
+
+ - 간단한 수정 가능합니다 (제 스킨인지 알아보지 못할 정도로 수정 X)
+ - 몇 가지 수정 방법은 스킨을 다운로드한 페이지, 또는 나눔 스킨을 참고하여 수정하시면 됩니다.
+ - 구매 or 커미션 후 수정은 본인이 직접, 수정 후 문제 또한 되도록 본인이 직접 해결하셔야 합니다.
+ - 문의는 구매 스킨 - 각 스킨 다운로드 페이지에 공개 댓글, 커미션 스킨 - 방명록 을 이용해주세요.
+
+ - 카피 라이트의 문구를 변경하거나 보이지 않도록 수정 또는 삭제해서는 안 됩니다. (예외 = 옵션 구매)
+ - 스킨은 1계정에서만 사용할 수 있습니다. (판매 스킨인 경우에만 옵션 구매 가능)
+ - 커미션 등 개인적인 상업용으로 용도 변경 시 추가 비용 있습니다 (커미션, 수정 스킨 해당)
+
+ 감사합니다.
+-->
+<html>
+
+	<head>
+		<title>[##_title_##] :: [##_page_title_##]</title>
+		<meta name="title" content="[##_title_##] :: [##_page_title_##]" />
+		<meta name="description" Content="[##_desc_##]" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]" />
+		<link rel="shortcut icon" href="[##_blog_link_##]favicon.ico" />
+		<link href="./style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<s_if_var_firstpage>
+			<script>
+				// 첫화면
+				var pathArray = location.href.split('/');
+				if (pathArray[3] == '') {
+					$('html').css('display', 'none');
+					location.href = '/[##_var_firstpage_##]';
+				}
+
+			</script>
+		</s_if_var_firstpage>
+		<s_if_var_cursor>
+			<style>
+				* {
+					cursor: url([##_var_cursor_##]), auto !important;
+				}
+
+			</style>
+		</s_if_var_cursor>
+		<s_if_var_paragraph>
+			<style>
+				.text-item p,
+				.text-item h1,
+				.text-item h2,
+				.text-item h3,
+				.text-item h4,
+				ul[data-ke-list-type='disc'],
+				ul[data-ke-list-type='square'],
+				ol[data-ke-list-type='decimal'] {
+					margin-bottom: 28px;
+				}
+
+			</style>
+		</s_if_var_paragraph>
+		<style>
+			:root {
+				--bg: [##_var_bg-color_##];
+				--text: [##_var_color_##];
+				--point: [##_var_p-color_##];
+				--point2: [##_var_p-color2_##];
+				--scroll: [##_var_scroll-color_##];
+				--nav: [##_var_nav-color_##];
+			}
+
+			.width {
+				max-width: [##_var_con-width_##]px;
+				margin: auto;
+			}
+
+			body {
+				background-color: [##_var_bg-color_##];
+				background-image: url([##_var_bg-img_##]);
+			}
+
+			@media screen and (max-width: calc([##_var_con-width_##]px + 30px)) {
+				.width {
+					padding: 0 15px;
+				}
+			}
+
+		</style>
+	</head>
+
+	<body id="[##_body_id_##]" class="<s_if_var_page-more>page-more</s_if_var_page-more>  <s_if_var_profile>profile</s_if_var_profile>">
+		<s_t3>
+			<!-- 전체 박스 -->
+			<div id="container">
+
+				<!-- 헤더 -->
+				<header id="header">
+					<div class="width">
+						<!-- 로고 -->
+						<a class="logo" href="[##_blog_link_##]">
+							<s_if_var_logo>
+								<div style="background-image: url([##_var_logo_##])"></div>
+							</s_if_var_logo>
+						</a>
+
+						<!-- 타이틀 -->
+						<div class="title"> <a href="[##_blog_link_##]">
+							<s_if_var_title-logo> <img src="[##_var_title-logo_##]" alt="[##_title_##]"> </s_if_var_title-logo>
+							<s_not_var_title-logo>[##_title_##]</s_not_var_title-logo>
+							</a> </div>
+
+						<!-- 소개글 -->
+						<li class="intro"><span>
+							<s_not_var_intro><i class="fa fa-bars" aria-hidden="true"></i> </s_not_var_intro>
+							<s_if_var_intro>[##_var_intro_##] </s_if_var_intro>
+							</span></li>
+					</div>
+				</header>
+				<!-- 헤더 끝 -->
+
+				<!-- 카테고리 -->
+				<div class="catebox">
+
+					<!-- sns -->
+					<ul class="sns">
+						<s_if_var_sns-fb><a href="//www.facebook.com/[##_var_sns-fb_##]" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></s_if_var_sns-fb>
+						<s_if_var_sns-insta><a href="//www.instagram.com/[##_var_sns-insta_##]" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></s_if_var_sns-insta>
+						<s_if_var_sns-twt><a href="//twitter.com/[##_var_sns-twt_##]" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></s_if_var_sns-twt>
+					</ul>
+					<i class="ti-close"></i>
+					<ul class="scroll">
+						<s_if_var_t-menu>
+							<ul class="blogmenu">
+								[##_blog_menu_##]
+							</ul>
+						</s_if_var_t-menu>
+						<s_not_var_t-menu> [##_category_list_##]
+							<s_if_var_guest>
+								<li class="cate guest"><a href="[##_guestbook_link_##]">[##_var_guest_##]</a></li>
+							</s_if_var_guest>
+						</s_not_var_t-menu>
+					</ul>
+				</div>
+
+				<!-- 메인 영역 -->
+				<article id="content">
+					<div class="width">
+
+						<!-- 목록 영역 -->
+						<div id="<s_if_var_lst-type>[##_var_lst-type_##]</s_if_var_lst-type>" class="myoskin inner">
+							<s_article_protected>
+								<!-- 보호글 -->
+								<s_index_article_rep>
+									<div class="item protected"> <a href="[##_article_rep_link_##]">
+										<div class="info">
+											<p class="cate">[##_article_rep_category_##]</p>
+											<p class="title">[##_article_rep_title_##]</p>
+											<p class="date">[##_article_rep_simple_date_##]</p>
+										</div>
+										<div class="thumbox"><span class="thumb-img"><img class="thum" src="//i1.daumcdn.net/thumb/C600x300/?fname=<s_if_var_secret>[##_var_secret_##]</s_if_var_secret><s_not_var_secret>./images/secret.jpg</s_not_var_secret>" alt="[##_article_rep_title_##]"> </span></div>
+										</a> </div>
+								</s_index_article_rep>
+								<s_permalink_article_rep>
+									<div class="pass">
+										<form class="protected_form" onsubmit="[##_article_dissolve_##]">
+											<fieldset>
+												<input required type="password" id="[##_article_password_##]" name="[##_article_password_##]" value="" />
+												<label for="[##_article_password_##]" placeholder="password"></label>
+												<button type="submit">ENTER</button>
+											</fieldset>
+										</form>
+									</div>
+								</s_permalink_article_rep>
+							</s_article_protected>
+
+							<!-- 목록 -->
+							<s_article_rep>
+								<s_index_article_rep>
+									<div class="item"> <a href="[##_article_rep_link_##]">
+										<div class="info">
+											<p class="cate">[##_article_rep_category_##]</p>
+											<p class="title">[##_article_rep_title_##]</p>
+											<p class="date">[##_article_rep_simple_date_##] </p>
+										</div>
+										<div class="thumbox">
+											<s_article_rep_thumbnail> <span class="thumb-img"><img class="thum" src="//i1.daumcdn.net/thumb/C600x300/?fname=[##_article_rep_thumbnail_raw_url_##]" alt="[##_article_rep_title_##]"></span></s_article_rep_thumbnail>
+										</div>
+										</a> </div>
+								</s_index_article_rep>
+								<s_permalink_article_rep>
+									<!-- 본문 영역 -->
+									<div class="article">
+
+										<!-- 본문 타이틀 -->
+										<div class="titlebox">
+											<p class="title">[##_article_rep_title_##]</p>
+											<span class="date">[##_article_rep_date_##]</span>
+											<s_ad_div> <span class="admin"><a href="#" onclick="[##_s_ad_s2_onclick_##]" class="admin_slash">[##_s_ad_s2_label_##]</a> <a href="[##_s_ad_m_link_##]"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#" onclick="[##_s_ad_d_onclick_##]"><i class="fa fa-trash" aria-hidden="true"></i></a> </span> </s_ad_div>
+										</div>
+									</div>
+									<!-- 본문 -->
+									<div class="text-item"> [##_article_rep_desc_##] </div>
+
+									<!-- 본문 태그 -->
+									<s_tag_label>
+										<div class="tags">[##_tag_label_rep_##]</div>
+									</s_tag_label>
+
+									<!-- 댓글 오픈 -->
+									<div class="opencmt"> <a href="#rp" onclick="[##_article_rep_rp_link_##]">COMMENT <span><s_rp_count>[##_article_rep_rp_cnt_##]</s_rp_count></span></a> </div>
+
+									<!-- 댓글 -->
+									<s_rp>
+										<div id="rp" class="cmt">
+											<s_rp_container>
+												<!-- 댓글 목록 -->
+												<div class="lst">
+													<s_rp_rep>
+														<ul id="[##_rp_rep_id_##]">
+															<li class="guest [##_rp_rep_class_##]"> <span class="pro nopro"></span>
+																<p class="text">[##_rp_rep_desc_##]</p>
+																<span class="name">[##_rp_rep_name_##]</span><span class="date">[##_rp_rep_date_##]</span> <span class="admin"><a href="#" onclick="[##_rp_rep_onclick_reply_##]"><i class="fa fa-reply" aria-hidden="true"></i></a> <a href="#" onclick="[##_rp_rep_onclick_delete_##]"><i class="fa fa-pencil" aria-hidden="true"></i> | <i class="fa fa-trash" aria-hidden="true"></i></a></span>
+															</li>
+															<!-- 답글 -->
+															<s_rp2_container>
+																<ul>
+																	<s_rp2_rep>
+																		<li id="[##_rp_rep_id_##]" class="reply [##_rp_rep_class_##]"> <span class="pro nopro"></span>
+																			<p class="text">[##_rp_rep_desc_##]</p>
+																			<span class="name">[##_rp_rep_name_##]</span><span class="date">[##_rp_rep_date_##]</span><span class="admin"> <a href="#" onclick="[##_rp_rep_onclick_delete_##]"><i class="fa fa-pencil" aria-hidden="true"></i> | <i class="fa fa-trash" aria-hidden="true"></i></a> </span>
+																		</li>
+																	</s_rp2_rep>
+																</ul>
+															</s_rp2_container>
+														</ul>
+													</s_rp_rep>
+												</div>
+											</s_rp_container>
+											<s_rp_input_form>
+												<!-- 댓글 작성 -->
+												<div class="write">
+													<textarea name="[##_rp_input_comment_##]" cols="" rows="4" placeholder=""></textarea>
+													<button type="submit" onclick="[##_rp_onclick_submit_##]"><i class="fa fa-envelope" aria-hidden="true"></i></button>
+													<div class="inputbox">
+														<s_rp_member>
+															<s_rp_guest> <span class="input">
+																<input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" placeholder="name">
+																<input type="password" name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]" placeholder="password">
+																</span> </s_rp_guest>
+															<span class="secret">
+																<input type="checkbox" name="[##_rp_input_is_secret_##]" id="secret">
+																<label for="[##_rp_input_is_secret_##]"></label>
+															</span>
+														</s_rp_member>
+													</div>
+												</div>
+											</s_rp_input_form>
+										</div>
+									</s_rp>
+								</s_permalink_article_rep>
+							</s_article_rep>
+						</div>
+
+						<!-- 방명록 -->
+						<s_guest>
+							<div class="cmt">
+								<s_guest_input_form>
+									<!-- 방명록 작성 -->
+									<div class="write">
+										<textarea name="[##_guest_textarea_body_##]" cols="" rows="4" placeholder=" "></textarea>
+										<button type="submit" onclick="[##_guest_onclick_submit_##]"><i class="fa fa-envelope" aria-hidden="true"></i></button>
+										<div class="inputbox">
+											<s_guest_member>
+												<s_guest_form> <span class="input">
+													<input type="text" name="[##_guest_input_name_##]" value="[##_guest_name_##]" placeholder="name">
+													<input type="password" name="[##_guest_input_password_##]" value="[##_guest_password_##]" placeholder="password">
+													</span> </s_guest_form>
+												<span class="secret">
+													<input type="checkbox" name="[##_guest_input_is_secret_##]" id="secret">
+													<label for="[##_guest_input_is_secret_##]"></label>
+												</span>
+											</s_guest_member>
+										</div>
+									</div>
+								</s_guest_input_form>
+								<s_guest_container>
+									<!-- 댓글 목록 -->
+									<div class="lst">
+										<s_guest_rep>
+											<ul id="[##_guest_rep_id_##]">
+												<li class="guest [##_guest_rep_class_##]"> <span class="nopro"></span>
+													<p class="text">[##_guest_rep_desc_##]</p>
+													<span class="name">[##_guest_rep_name_##]</span> <span class="date">[##_guest_rep_date_##]</span><span class="admin"><a href="#" onclick="[##_guest_rep_onclick_reply_##]"><i class="fa fa-reply" aria-hidden="true"></i></a> <a href="#" onclick="[##_guest_rep_onclick_delete_##]"><i class="fa fa-pencil" aria-hidden="true"></i> | <i class="fa fa-trash" aria-hidden="true"></i></a></span>
+												</li>
+												<!-- 답글 -->
+												<s_guest_reply_container>
+													<ul>
+														<s_guest_reply_rep>
+															<li id="[##_guest_rep_id_##]" class="reply [##_guest_rep_class_##]"><span class="nopro"></span>
+																<p class="text">[##_guest_rep_desc_##]</p>
+																<span class="name">[##_guest_rep_name_##]</span><span class="date">[##_guest_rep_date_##]</span><span class="admin"> <a href="#" onclick="[##_guest_rep_onclick_delete_##]"><i class="fa fa-pencil" aria-hidden="true"></i> | <i class="fa fa-trash" aria-hidden="true"></i></a> </span>
+															</li>
+														</s_guest_reply_rep>
+													</ul>
+												</s_guest_reply_container>
+											</ul>
+										</s_guest_rep>
+									</div>
+								</s_guest_container>
+							</div>
+						</s_guest>
+					</div>
+					<!-- 페이지네이션 -->
+					<s_paging>
+						<div class="pagination"><a [##_prev_page_##] class="prev [##_no_more_prev_##]">prev</a> <span class="num">
+							<s_paging_rep><a [##_paging_rep_link_##]>[##_paging_rep_link_num_##]</a></s_paging_rep>
+							</span> <a [##_next_page_##] class="next [##_no_more_next_##]">next</a> </div>
+					</s_paging>
+				</article>
+				<!-- 메인 영역 끝 -->
+
+				<!-- 푸터 -->
+				<footer id="footer">
+					<div class="width">
+						<s_search>
+							<!-- 검색 -->
+							<li class="search">
+								<input type="text" name="[##_search_name_##]" value="[##_search_text_##]" placeholder="search" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }">
+								<button type="submit" onclick="[##_search_onclick_submit_##]"><i class="fa fa-search"></i></button>
+							</li>
+						</s_search>
+
+						<!-- 카피라이트 삭제, 문구 변경 금지 = 발견 시 나눔 종료 -->
+						<div class="copy"><a href="//sweet-myo.tistory.com" target="_blank" title="묘연 티스토리 스킨">myo <i class="ti-comments-smiley"></i></a></div>
+						<!-- 카피라이트 삭제, 문구 변경 금지 = 발견 시 나눔 종료 -->
+
+					</div>
+				</footer>
+				<!-- 푸터 끝 -->
+			</div>
+			<!-- container -->
+
+			<script src="./images/jquery.easeScroll.js"></script>
+			<script src="./images/script.js"></script>
+			<script>
+				$(function() { // 부분 목록
+					var ptn = location.pathname;
+					if (ptn == '/category/text' || ptn == '/category/gallery/sub-text' || ptn == '/category/text/sub-text2') {
+						$(".myoskin").attr("id", "myo_bbs");
+					}
+				});
+
+				// 부드러운 스크롤
+				$("html, .scroll").easeScroll();
+
+				$(function() { // 단축키
+					var key = new Array();
+					key['w'] = "<s_not_var_hotkey>/admin/entry/post</s_not_var_hotkey><s_if_var_hotkey>/manage/newpost/?type=post&returnURL=/manage/posts/</s_if_var_hotkey>";
+					key['e'] = "/manage/design/skin/edit";
+					key['g'] = "/guestbook";
+					key['h'] = "/";
+
+					function getKey(keyStroke) {
+						if ((event.srcElement.tagName != 'INPUT') && (event.srcElement.tagName != 'TEXTAREA')) {
+							isNetscape = (document.layers);
+							eventChooser = (isNetscape) ? keyStroke.which : event.keyCode;
+							which = String.fromCharCode(eventChooser).toLowerCase();
+							for (var i in key)
+								if (which == i) window.location = key[i];
+						}
+					}
+					document.onkeypress = getKey;
+				});
+
+				$(function() { // 노이미지
+					$(".thumbox").not(":has(.thumb-img)").prepend("<span class=\"thumb-img\"><img class=\"noimg\" src=\"//i1.daumcdn.net/thumb/C600x300/?fname=<s_if_var_noimg>[##_var_noimg_##]</s_if_var_noimg><s_not_var_noimg>./images/noimg.jpg</s_not_var_noimg>\" alt=\"[##_article_rep_title_##]\"></span>");
+				});
+
+			</script>
+		</s_t3>
+	</body>
+
+</html>
